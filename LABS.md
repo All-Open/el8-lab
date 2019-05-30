@@ -60,11 +60,48 @@ Once you have you `EL 8` up and running, switch to root user and install lab RPM
 
 TODO describe how lab RPM can be installed!
 
+# Usage
+
+RPM provides `all-open-lab` command capable of listing, preparing and grading labs.
+
+To list of available labs type:
+```
+# all-open-lab list labs
+(...)
+```
+
+In order to prepare your system for a given lab :
+```
+# all-open-lab setup <lab-name>
+```
+
+After you complete the lab check results with:
+```
+# all-open-lab grade <lab-name>
+```
+
 # Lab guide
 
-List of labs with links
+List of labs:
+* [prereq]
 
-## Lab xxx
-setup (special requirements)
-description
-gradings
+## prereq
+The purpose of this lab is to familarize you with `all-open-lab` tool, but also check if your system fulfills requirements.
+
+### Setup
+Execute the following command and make sure to have the same output:
+```
+# all-open-lab setup prereq
+Preparing lab: Testing if prerequisites are met                                 [ OK ]
+```
+
+### Grading
+Execute the following command and make sure to have the same output:
+```
+# all-open-lab grade prereq
+Testing if prerequisites are met
+    Checking if OS is running Enterprise Linux 8                                [ OK ]
+    Checking if yum repo BaseOS is available                                    [ OK ]
+    Checking if yum repo AppStream is available                                 [ OK ]
+Overall lab status: [3/3]                                                       [ OK ]
+```
