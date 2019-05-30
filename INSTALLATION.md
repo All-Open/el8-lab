@@ -7,13 +7,14 @@ Before you begin, keep in mind that there is a chance you don't need to perform 
 * Anaconda Installer does not introduce any significant changes so there is a little reason to learn it
 * Installation process is lenghty and boring
 * Cloud instances have `RHEL 8` and `CentOS 8` preinstalled
-* Vagrant Box have `CentOS 8` preinstalled
+* ~~Vagrant Box have `CentOS 8` preinstalled~~ (not released yet!)
 
 Consult [lab setup](LABS.md#Setup) for details.
 
 # Prerequisites
 
 1. Grab ISO image. Choose one of two options:
+
   * `RHEL 8`
     * [Download from official site](https://developers.redhat.com/products/rhel/download/)
     * Registration is required, but Developer Subscription is free of charge
@@ -21,6 +22,7 @@ Consult [lab setup](LABS.md#Setup) for details.
     * Not released yet!
 
 2. Choose your hypervisor
+
 A popular choice is [VirtualBox](https://www.virtualbox.org/) that works on all major platforms.
 The other option is your platform native Hypervisor, like KVM on Linux or Hyper-V on Windows.
 VMware or oVirt installation are also feasible.
@@ -36,6 +38,7 @@ Create a new Virtual Machine, insert ISO image and complete the installation.
 1. Click through First Boot dialog.
 
 2. [Register your system](https://access.redhat.com/solutions/253273) to make software repositories available (`RHEL 8` only).
+
 The following command should do it:
 ```
 # subscription-manager register --username <username> --password <password> --auto-attach
