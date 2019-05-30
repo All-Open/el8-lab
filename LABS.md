@@ -43,7 +43,7 @@ Some labs pose additional requirements. Summary:
 * Disk/filesystem labs may require extra disk attached.
 * Cloud image lab requires cloud access.
 
-However, majority of the labs can be accomplished even when they are not satisfied.
+However, majority of the labs can be accomplished even when additional requirements are not satisfied.
 
 # Prerequisites - FAQ
 > Can I run labs on an existing machine?
