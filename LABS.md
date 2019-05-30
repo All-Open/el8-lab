@@ -83,7 +83,7 @@ After you complete the lab check results with:
 # Lab guide
 
 List of labs:
-* [prereq]
+* [prereq](prereq)
 
 ## prereq
 The purpose of this lab is to familarize you with `all-open-lab` tool, but also check if your system fulfills requirements.
