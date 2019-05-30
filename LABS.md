@@ -86,6 +86,8 @@ List of labs:
 * [prereq](#prereq)
 
 ## prereq
+
+### Description
 The purpose of this lab is to familarize you with `all-open-lab` tool, but also check if your system fulfills requirements.
 
 ### Setup
