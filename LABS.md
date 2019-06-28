@@ -84,6 +84,8 @@ After you complete the lab check results with:
 
 List of labs:
 * [prereq](#prereq)
+* [packages](#packages)
+* [dnf](#dnf)
 
 ## prereq
 
@@ -106,4 +108,49 @@ Testing if prerequisites are met
     Checking if yum repo BaseOS is available                                    [ OK ]
     Checking if yum repo AppStream is available                                 [ OK ]
 Overall lab status: [3/3]                                                       [ OK ]
+```
+
+## packages
+
+### Description
+The purpose of this lab is to explore new package management features.
+
+Task list:
+
+* Install `httpd` package without its weak dependencies
+
+### Setup
+Execute
+```
+# all-open-lab setup packages
+```
+
+### Grading
+Execute
+```
+# all-open-lab grade packages
+```
+
+## dnf
+
+### Description
+The purpose of this lab is to configure DNF in accordance with organization requirements.
+
+Task list:
+
+* Make sure that `yum` command is available
+* Make sure that `yum-utils` commands like `repoquery` are available
+* Ensure performant `dnf` runs by having its cache always up-to-date
+* Configure system to display pending security errata in MOTD (message of the day)
+
+### Setup
+Execute
+```
+# all-open-lab setup dnf
+```
+
+### Grading
+Execute
+```
+# all-open-lab grade dnf
 ```
