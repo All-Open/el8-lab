@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+
+set -eu
+
+[ -n "${DEBUG-}" ] && set -x
+
+print_help() {
+    echo "Usage:"
+    echo "$0 list              # list labs"
+    echo "$0 setup <lab-name>  # prepare system for <lab-name> lab"
+    echo "$0 grade <lab-name>  # grade <lab-name> lab"
+}
+
+if [ "$#" -lt 1 ]; then
+    print_help
+    exit 1
+fi
+
+if [ "$1" == "list" ]; then
+    source /usr/lib/all-open.lib
+    $1
+elif [ "$1" == "setup" ] || [ "$1" == "grade" ]; then
+    if [ "$#" -ne 2 ]; then
+        echo "Please provide <lab-name>"
+        exit 1
+    fi
+    source /usr/lib/all-open.lib
+    $1 $2
+else
+    print_help
+    exit 1
+fi

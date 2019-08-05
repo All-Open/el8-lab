@@ -1,0 +1,30 @@
+lab_desc="Testing if prerequisites are met"
+
+setup () {
+    status_ok
+}
+
+grade () {
+    echo "check_enterprise_linux_8 check_yum_repo_baseos check_yum_repo_appstream"
+}
+
+check_enterprise_linux_8_desc="Checking if OS is running Enterprise Linux 8"
+check_enterprise_linux_8 () {
+    grep -q enterprise_linux:8 /etc/os-release && return 0
+
+    return 1
+}
+
+check_yum_repo_baseos_desc="Checking if yum repo BaseOS is available"
+check_yum_repo_baseos () {
+    dnf repolist 2> /dev/null | grep -q baseos && return 0
+
+    return 1
+}
+
+check_yum_repo_appstream_desc="Checking if yum repo AppStream is available"
+check_yum_repo_appstream () {
+    dnf repolist 2> /dev/null | grep -q appstream && return 0
+
+    return 1
+}

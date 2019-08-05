@@ -1,0 +1,25 @@
+_all_open_lab() 
+{
+    local cur prev opts
+    COMPREPLY=()
+    cur="${COMP_WORDS[COMP_CWORD]}"
+    prev="${COMP_WORDS[COMP_CWORD-1]}"
+    opts="list setup grade"
+
+    #
+    #  The basic options we'll complete.
+    #
+    lab_list="$(all-open-lab list)"
+
+    #
+    #  Complete the arguments to some of the basic commands.
+    #
+    if [ "${prev}" == "setup" ] || [ "${prev}" == "grade" ]; then
+        COMPREPLY=( $(compgen -W "${lab_list}" -- ${cur}) )
+        return 0
+    fi
+
+    COMPREPLY=($(compgen -W "${opts}" -- ${cur}))  
+    return 0
+}
+complete -F _all_open_lab all-open-lab
