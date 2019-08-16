@@ -86,6 +86,8 @@ List of labs:
 * [prereq](#prereq)
 * [packages](#packages)
 * [dnf](#dnf)
+* [modules](#modules)
+* [switching-modules](#switching-modules)
 
 ## prereq
 
@@ -153,4 +155,54 @@ Execute
 Execute
 ```
 # all-open-lab grade dnf
+```
+
+## modules
+
+### Description
+The purpose of this lab is gain experience with basic concepts of modularity, like modules, streams and profiles.
+
+Task list:
+
+* Make sure that `php` package is not visible be `yum`
+* Make sure that `swig` module is neither enabled nor disabled
+* Install `subversion` server
+* Make sure that `redis` package will be updated (once newer version is released) the next time `yum update` is executed
+* Completely remove `squid` module with all its packages
+* Install `postgresql` 9.6 client package
+* Install `custodia` (idm secret provider) package
+
+### Setup
+Execute
+```
+# all-open-lab setup modules
+```
+
+### Grading
+Execute
+```
+# all-open-lab grade modules
+```
+## switching-modules
+
+### Description
+The purpose of this lab is to switch installed modules which may require a little bit of troubleshooting.
+
+Task list:
+
+* Install `galera` profile in a clean way
+  * You are allowed to remove software
+  * You should deliberately and not unused modules enabled
+* Update `perl` to version 5.26 with minimal profile installed
+
+### Setup
+Execute
+```
+# all-open-lab setup switching-modules
+```
+
+### Grading
+Execute
+```
+# all-open-lab grade switching-modules
 ```

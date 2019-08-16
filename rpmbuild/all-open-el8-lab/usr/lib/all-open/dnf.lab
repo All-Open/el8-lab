@@ -1,0 +1,60 @@
+lab_desc="Configure DNF in accordance with organization requirements"
+
+setup () {
+    :
+}
+
+grade () {
+    echo "check_yum_installed check_dnf_utils_installed check_makecache_enabled check_automatic_installed check_security check_motd check_dnf_automatic_enabled"
+}
+
+check_yum_installed_desc="yum package should be installed"
+check_yum_installed () {
+    is_package_installed yum && return 0
+
+    return 1
+}
+
+check_dnf_utils_installed_desc="dnf-utils package should be installed"
+check_dnf_utils_installed () {
+    is_package_installed dnf-utils && return 0
+
+    return 1
+}
+
+check_makecache_enabled_desc="dnf-makecache.timer should be enabled"
+check_makecache_enabled () {
+    is_service_enabled dnf-makecache.timer && return 0
+
+    return 1
+}
+
+check_automatic_installed_desc="dnf-automatic package should be installed"
+check_automatic_installed () {
+    is_package_installed dnf-automatic && return 0
+
+    return 1
+}
+
+check_security_desc="upgrade_type is set to security in /etc/dnf/automatic.conf"
+check_security () {
+    grep ^upgrade_type /etc/dnf/automatic.conf 2>/dev/null | grep -q security && return 0
+
+    return 1
+}
+
+check_motd_desc="emit_via is set to motd in /etc/dnf/automatic.conf"
+check_motd () {
+    grep ^emit_via /etc/dnf/automatic.conf 2>/dev/null | grep -q motd && return 0
+
+    return 1
+}
+
+check_dnf_automatic_enabled_desc="dnf-automatic.timer should be enabled"
+check_dnf_automatic_enabled () {
+    # in fact one of a few can be enabled so check all of them
+    is_service_enabled dnf-automatic.timer || is_service_enabled dnf-automatic-download.timer \
+    is_service_enabled dnf-automatic-notifyonly.timer && return 0
+
+    return 1
+}

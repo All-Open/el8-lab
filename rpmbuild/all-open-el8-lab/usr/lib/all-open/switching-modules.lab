@@ -1,0 +1,32 @@
+lab_desc="Switching module streams :)"
+
+setup () {
+    echo
+    echo
+    echo -n "Please stay patient - it can take a while"
+    yum module -y install mysql --allowerasing >/dev/null 2>/dev/null
+    echo -n "."
+    yum module -y reset perl >/dev/null 2>/dev/null
+    echo -n "."
+    yum module -y install perl:5.24/minimal --allowerasing >/dev/null 2>/dev/null
+}
+
+grade () {
+    echo "install_galera update_perl"
+}
+
+install_galera_desc="Install galera profile in a clean way"
+install_galera () {
+    # "Clean" meaning - remove mysql and disable module first
+
+    is_package_installed mysql-server && return 1
+    ! is_package_installed galera && return 1
+    grep -q "^state=enabled" /etc/dnf/modules.d/mysql.module && return 1
+
+    return 0
+}
+
+update_perl_desc="Update perl to 5.26 with minimal profile"
+update_perl () {
+    yum module list 2>/dev/null | grep perl | grep 26 | grep -q 'minimal \[i\]'
+}

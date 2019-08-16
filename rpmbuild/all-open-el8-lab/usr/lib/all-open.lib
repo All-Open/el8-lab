@@ -1,0 +1,72 @@
+lab_dir="/usr/lib/all-open/"
+
+list () {
+    basename -s.lab -a $(ls -1 ${lab_dir}/*.lab)
+    exit 0
+}
+
+setup () {
+    source "${lab_dir}/$1.lab"
+    echo "Lab instructions at"
+    echo ""
+    echo "https://github.com/All-Open/el8-lab/blob/master/LABS.md#$1"
+    echo ""
+    echo -n "Preparing lab: ${lab_desc}"
+    setup && status_ok || status_fail && exit 1
+}
+
+grade () {
+    if [ ! -e "${lab_dir}/$1.lab" ]; then
+        echo "No such lab :("
+        echo "Available labs:"
+        list
+        exit 1
+    fi
+    source "${lab_dir}/$1.lab"
+    echo "${lab_desc}"
+    success=0
+    total=0
+    checks=$(grade)
+    for check in ${checks}; do
+        total="$((total+1))"
+        desc="${check}_desc"
+        echo -en "    ${!desc}"
+        ${check} | :
+        status=${PIPESTATUS[0]}
+        [ ${status} -eq 0 ] && success="$((success+1))" && status_ok || status_fail
+    done
+    echo -n "Overall lab status: [${success}/${total}]"
+    [ "$success" -eq "$total" ] && status_ok || status_fail
+}
+
+###############################################
+######## common functions #####################
+###############################################
+
+NO_COLOUR="\033[0m"
+RED="\033[0;31m"
+GREEN="\033[0;32m"
+
+status_position_cursor () {
+    # move to beginig of the line, then column 80
+    echo -en "\r\033[80C"
+}
+
+status_ok () {
+    status_position_cursor
+    echo -en "[ ${GREEN}OK${NO_COLOUR} ]\n"
+}
+
+status_fail () {
+    status_position_cursor
+    echo -en "[${RED}FAIL${NO_COLOUR}]\n"
+}
+
+is_package_installed () {
+    rpm -q $1 >/dev/null
+}
+
+is_service_enabled () {
+    systemctl is-enabled $1 2> /dev/null > /dev/null
+}
+

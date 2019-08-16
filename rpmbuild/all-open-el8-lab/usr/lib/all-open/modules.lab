@@ -1,0 +1,65 @@
+lab_desc="Modules, streams, profiles, and more :)"
+
+setup () {
+    echo
+    echo
+    echo -n "Please stay patient - it can take a while"
+    yum module -y enable swig >/dev/null 2>/dev/null
+    echo -n "."
+    yum module -y install squid >/dev/null 2>/dev/null
+    echo -n "."
+    yum module -y enable redis >/dev/null 2>/dev/null
+    echo -n "."
+    yum module -y install redis >/dev/null 2>/dev/null
+    echo -n "."
+    yum module -y disable redis >/dev/null 2>/dev/null
+}
+
+grade () {
+    echo "disable_php reset_swig install_subversion_server updatable_redis remove_squid install_postgres96_client install_custodia"
+}
+
+disable_php_desc="php should not be listed by 'yum list'"
+disable_php () {
+    yum list php 2>&1 | grep -q "No matching Packages"
+}
+
+reset_swig_desc="swig module should be neither enabled nor disabled"
+reset_swig () {
+    if [ ! -e /etc/dnf/modules.d/swig.module ]; then
+        return 0
+    fi
+
+    grep -q "^state=$" /etc/dnf/modules.d/swig.module
+}
+
+install_subversion_server_desc="Install subversion server"
+install_subversion_server () {
+    is_package_installed mod_dav_svn
+}
+
+updatable_redis_desc="Make sure redis will be updated during the next system update"
+updatable_redis () {
+    yum module list 2>/dev/null | grep redis | grep -q '\[x\]' && return 1
+
+    return 0
+}
+
+remove_squid_desc="Remove squid module with all its packages"
+remove_squid () {
+    is_package_installed squid && return 1
+    is_package_installed libecap && return 1
+    grep -q "^state=enabled" /etc/dnf/modules.d/squid.module && return 1
+
+    return 0
+}
+
+install_postgres96_client_desc="Install postgresql 9.6 client package"
+install_postgres96_client () {
+    rpm -qa postgresql 2>/dev/null | grep -q "^postgresql-9.6"
+}
+
+install_custodia_desc="Install custodia (idm secret provider) package"
+install_custodia () {
+    is_package_installed custodia
+}
