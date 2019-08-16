@@ -1,4 +1,4 @@
-lab_desc="Module streams and waterfalls :)"
+lab_desc="Modules, streams, profiles, and more :)"
 
 setup () {
     echo
@@ -8,16 +8,15 @@ setup () {
     echo -n "."
     yum module -y install squid >/dev/null 2>/dev/null
     echo -n "."
+    yum module -y enable redis >/dev/null 2>/dev/null
+    echo -n "."
     yum module -y install redis >/dev/null 2>/dev/null
     echo -n "."
     yum module -y disable redis >/dev/null 2>/dev/null
-    echo -n "."
-    yum module -y install mysql >/dev/null 2>/dev/null
-    status_ok
 }
 
 grade () {
-    echo "disable_php reset_swig install_subversion_server updatable_redis remove_squid install_custodia install_galera"
+    echo "disable_php reset_swig install_subversion_server updatable_redis remove_squid install_postgres96_client install_custodia"
 }
 
 disable_php_desc="php should not be listed by 'yum list'"
@@ -41,7 +40,7 @@ install_subversion_server () {
 
 updatable_redis_desc="Make sure redis will be updated during the next system update"
 updatable_redis () {
-    yum module list | grep redis | grep -q '\[x\]' && return 1
+    yum module list 2>/dev/null | grep redis | grep -q '\[x\]' && return 1
 
     return 0
 }
@@ -55,18 +54,12 @@ remove_squid () {
     return 0
 }
 
+install_postgres96_client_desc="Install postgresql 9.6 client package"
+install_postgres96_client () {
+    rpm -qa postgresql 2>/dev/null | grep -q "^postgresql-9.6"
+}
+
 install_custodia_desc="Install custodia (idm secret provider) package"
 install_custodia () {
     is_package_installed custodia
-}
-
-install_galera_desc="Install galera profile in a clean way"
-install_galera () {
-    # "Clean" meaning - remove mysql and disable module first
-
-    is_package_installed mysql-server && return 1
-    ! is_package_installed galera && return 1
-    grep -q "^state=enabled" /etc/dnf/modules.d/mysql.module && return 1
-
-    return 0
 }

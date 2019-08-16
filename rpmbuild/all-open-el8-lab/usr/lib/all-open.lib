@@ -12,7 +12,7 @@ setup () {
     echo "https://github.com/All-Open/el8-lab/blob/master/LABS.md#$1"
     echo ""
     echo -n "Preparing lab: ${lab_desc}"
-    setup
+    setup && status_ok || status_fail && exit 1
 }
 
 grade () {

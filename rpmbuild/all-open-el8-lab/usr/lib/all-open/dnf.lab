@@ -1,7 +1,7 @@
 lab_desc="Configure DNF in accordance with organization requirements"
 
 setup () {
-    status_ok
+    :
 }
 
 grade () {

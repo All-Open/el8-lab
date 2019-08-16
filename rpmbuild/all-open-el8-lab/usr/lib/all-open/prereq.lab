@@ -1,7 +1,7 @@
 lab_desc="Testing if prerequisites are met"
 
 setup () {
-    status_ok
+    :
 }
 
 grade () {
