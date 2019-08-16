@@ -1,4 +1,4 @@
-_all_open_lab() 
+_all_open_lab()
 {
     local cur prev opts
     COMPREPLY=()
@@ -19,7 +19,7 @@ _all_open_lab()
         return 0
     fi
 
-    COMPREPLY=($(compgen -W "${opts}" -- ${cur}))  
+    COMPREPLY=($(compgen -W "${opts}" -- ${cur}))
     return 0
 }
 complete -F _all_open_lab all-open-lab
