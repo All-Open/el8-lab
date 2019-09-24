@@ -4,7 +4,7 @@ Welcome to All Open Enterprise Linux 8 Labs!
 
 If you have not already, start with reading [README](README.md) first.
 
-# Prerequisites
+## Prerequisites
 
 All of the following labs work on any `Enterprise Linux 8`. The most popular choices are `Red Hat Enterprise Linux 8` and `CentOS 8` but everything should work on any derived distribution. To make it easier, I often call them `Enteprise Linux 8` or `EL 8` in short.
 
@@ -45,7 +45,7 @@ Some labs pose additional requirements. Summary:
 
 However, majority of the labs can be accomplished even when additional requirements are not satisfied.
 
-# Prerequisites - FAQ
+## Prerequisites - FAQ
 > Can I run labs on an existing machine?
 
 No, better get another one. Changes in boot process, networking and storage will render it unusable.
@@ -54,13 +54,13 @@ No, better get another one. Changes in boot process, networking and storage will
 
 No, unfortunately. Many labs require host-level access to kernel functions.
 
-# Setup
+## Setup
 
 Once you have you `EL 8` up and running, switch to root user and install lab RPM package.
 
 TODO describe how lab RPM can be installed!
 
-# Usage
+## Usage
 
 RPM provides `all-open-lab` command capable of listing, preparing and grading labs.
 
@@ -80,7 +80,7 @@ After you complete the lab check results with:
 # all-open-lab grade <lab-name>
 ```
 
-# Lab guide
+## Lab guide
 
 List of labs:
 * [prereq](#prereq)

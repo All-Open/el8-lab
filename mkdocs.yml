@@ -1,0 +1,22 @@
+site_name: 'Enterprise Linux 8 / CentOS 8 In Action'
+site_description: 'ExteptionALLy OPEN labs for Enterprise Linux 8 / CentOS 8 In Action training course'
+site_author: 'All Open Patryk Malina'
+site_url: ''
+nav:
+  - About: 'index.md'
+  - Setup: 
+      - Setup: 'installation/installation.md'
+  - Labs:
+      - Labs: 'labs/index.md'
+theme: 
+  name: 'material'
+  palette:
+    primary: 'green'
+    accent: 'deep orange'
+  feature:
+    tabs: true
+markdown_extensions:
+  - toc:
+      permalink: true
+extra_css:
+  - 'stylesheets/extra.css'

@@ -11,7 +11,7 @@ Before you begin, keep in mind that there is a chance you don't need to perform 
 
 Consult [lab setup](LABS.md#Setup) for details.
 
-# Prerequisites
+## Prerequisites
 
 1. Grab ISO image. Choose one of two options:
 
@@ -29,11 +29,11 @@ VMware or oVirt installation are also feasible.
 
 The choice is yours!
 
-# Lab - Performing Installation
+## Lab - Performing Installation
 
 Create a new Virtual Machine, insert ISO image and complete the installation.
 
-# After Installation
+## After Installation
 
 1. Click through First Boot dialog.
 
@@ -44,6 +44,6 @@ The following command should do it:
 # subscription-manager register --username <username> --password <password> --auto-attach
 ```
 
-# Grading
+## Grading
 
 The is no formal grading process. It's done when it's complete :)
