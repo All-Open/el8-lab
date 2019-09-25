@@ -2,7 +2,7 @@
 
 Welcome to All Open Enterprise Linux 8 Labs!
 
-If you have not already, start with reading [README](README.md) first.
+If you have not already, read [the main page](/) first.
 
 ## Prerequisites
 
@@ -16,7 +16,7 @@ Essentially, you need `EL 8` system up and running. There is quite a few options
 
 | Option                                             | Supported OSes           | Description                                    |
 | -------------------------------------------------- |:------------------------:| ---------------------------------------------- |
-| [Installation](INSTALLATION.md) in Virtual Machine | `RHEL 8`, ~~`CentOS 8`~~ | Manually performed installation                |
+| [Installation](../installation) in Virtual Machine | `RHEL 8`, ~~`CentOS 8`~~ | Manually performed installation                |
 | ~~Spinning up Vagrant Box~~                        | ~~`CentOS 8`~~           | ~~`vagrant init centos/8`~~ (not released yet) |
 | Launching Cloud instance                           | `RHEL 8`, ~~`CentOS 8`~~ | Every major Public Cloud offers instance images, and a free tier to run them |
 | Anything else                                      | may vary                 | Bare metal, Private Cloud, Moon Lander, anything else |
@@ -103,7 +103,7 @@ Preparing lab: Testing if prerequisites are met                                 
 
 ### Grading
 Execute the following command and make sure to have the same output:
-```
+```console
 # all-open-lab grade prereq
 Testing if prerequisites are met
     Checking if OS is running Enterprise Linux 8                                [ OK ]

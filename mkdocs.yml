@@ -3,9 +3,10 @@ site_description: 'ExteptionALLy OPEN labs for Enterprise Linux 8 / CentOS 8 In 
 site_author: 'All Open Patryk Malina'
 site_url: ''
 nav:
-  - About: 'index.md'
+  - Start:
+      - Welcome!: 'index.md'
   - Setup: 
-      - Setup: 'installation/installation.md'
+      - Setup: 'installation/index.md'
   - Labs:
       - Labs: 'labs/index.md'
 theme: 

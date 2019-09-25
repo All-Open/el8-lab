@@ -9,7 +9,7 @@ Before you begin, keep in mind that there is a chance you don't need to perform 
 * Cloud instances have `RHEL 8` and `CentOS 8` preinstalled
 * ~~Vagrant Box have `CentOS 8` preinstalled~~ (not released yet!)
 
-Consult [lab setup](LABS.md#Setup) for details.
+Consult [lab setup](../labs/#Setup) for details.
 
 ## Prerequisites
 
