@@ -1,5 +1,5 @@
 Name:		all-open-el8-lab
-Version:	0.0.1
+Version:	0.1.0
 Release:	1.el8
 Summary:	All Open Labs for Introduction to Enterprise Linux 8 course
 
