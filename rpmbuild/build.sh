@@ -7,12 +7,12 @@ pkg_name="all-open-el8-lab"
 set -eux
 
 if [ "$#" -eq 1 ] && [ "$1" == "magic" ]; then
-    # install previously built RPM and execute bash in a cotainer
+    # install previously built RPM and execute bash in a container
     user_arg="0"
     target="sh -c"
     args="yum localinstall --disablerepo=* -y /rpmbuild/RPMS/noarch/*.rpm; bash"
 elif [ "$#" -gt 0 ];  then
-    # execute command like bash in a cotainer
+    # execute command like bash in a container
     user_arg="0"
     target="sh -c"
     args="$@"
@@ -24,7 +24,7 @@ else
     args=""
 fi
 
-if ! [ -f /.dockerenv ]; then
+if ! [ -f /.dockerenv -o -f /run/.containerenv ]; then
     docker build -t ${cont_name} .
     docker run \
         -v "$(pwd)":/${work_dir}:z \
