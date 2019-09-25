@@ -1,0 +1,31 @@
+.md-typeset a {
+  color: #14a76c !important;
+}
+.md-typeset a:hover {
+  color: #ff652f !important;
+}
+.md-header {
+  background-color: #272727 !important;
+}
+.md-tabs {
+  background-color: #272727 !important;
+}
+.md-tabs a:hover {
+  color: #14a76c !important;
+}
+.md-nav__link[data-md-state="blur"] {
+  color: #14a76c;
+}
+.md-tabs__link {
+  font-weight: bolder;
+}
+.md-search__input {
+  background-color: rgba(255,255,255,.2);
+}
+/* a bit wider to have support full console width */
+.md-grid {
+  max-width: 65rem;
+}
+.md-sidebar--secondary {
+  margin-left: 65rem;
+}
