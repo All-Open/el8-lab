@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 cont_name="all-open/el8"
-work_dir="rpmbuild"
+work_dir="/rpmbuild"
 pkg_name="all-open-el8-lab"
 
 set -eux
@@ -27,7 +27,7 @@ fi
 if ! [ -f /.dockerenv -o -f /run/.containerenv ]; then
     docker build -t ${cont_name} .
     docker run \
-        -v "$(pwd)":/${work_dir}:z \
+        -v "$(pwd)":${work_dir}:z \
         -u ${user_arg} \
         -ti ${cont_name} ${target} "${args}"
     exit 0
@@ -39,4 +39,4 @@ rpmlint *.spec
 rm -rf {BUILD*,SOURCES}
 mkdir -p SOURCES/
 tar zcvfp SOURCES/${pkg_name}.tar.gz ${pkg_name}/
-rpmbuild -ba *.spec
+rpmbuild -ba --define "_topdir ${work_dir}" *.spec
