@@ -1,7 +1,8 @@
 site_name: 'Enterprise Linux 8 / CentOS 8 In Action'
 site_description: 'ExteptionALLy OPEN labs for Enterprise Linux 8 / CentOS 8 In Action training course'
 site_author: 'All Open Patryk Malina'
-site_url: ''
+site_url: 'https://el8-lab.all-open.com'
+repo_url: 'https://github.com/All-Open/el8-lab'
 nav:
   - Start:
       - Welcome!: 'index.md'
