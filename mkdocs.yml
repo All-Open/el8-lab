@@ -6,11 +6,22 @@ repo_url: 'https://github.com/All-Open/el8-lab'
 nav:
   - Start:
       - Welcome!: 'index.md'
-  - Setup: 
-      - Setup: 'installation/index.md'
+  - Lab Setup:
+      - Getting Started: 'setup/getting-started.md'
+      - Lab System Setup:
+        - VM Installation: 'setup/vm.md'
+        - Vagrant: 'setup/vagrant.md'
+        - Public Cloud: 'setup/cloud.md'
+      - System Registration: 'setup/registration.md'
+      - Installing Lab RPM: 'setup/rpm.md'
   - Labs:
-      - Labs: 'labs/index.md'
-theme: 
+      - Intro: 'labs/intro.md'
+      - Prequisites: 'labs/prereq.md'
+      - Package Management: 'labs/packages.md'
+      - DNF: 'labs/dnf.md'
+      - Using Modules: 'labs/modules.md'
+      - Switching Modules: 'labs/switching-modules.md'
+theme:
   name: 'material'
   palette:
     primary: 'green'
@@ -18,6 +29,9 @@ theme:
   feature:
     tabs: true
 markdown_extensions:
+  - admonition
+  - codehilite
+  - pymdownx.smartsymbols
   - toc:
       permalink: true
 extra_css:

@@ -7,3 +7,4 @@ Review the [`Labs`](labs/index.md), attempt to complete them, and check your res
 
 This repo is maintained by [All Open](https://all-open.com), and is actively used during [Enterprise Linux 8 In Action](https://all-open.com/enterprise-linux-8-in-action-training-workshop) training course.
 
+TODO: Thank mkdocs guys!
