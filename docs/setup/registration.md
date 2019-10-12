@@ -5,7 +5,7 @@
     If not, proceed to the next step.
 
 !!! tip
-    This is step can be skipped if you are running RHEL in Public Cloud.
+    This step can be skipped if you are running RHEL in Public Cloud. <br/>
     Public Cloud instances have RHEL subscription included in instance costs.
 
 ## Why is Registration Needed?
@@ -21,4 +21,4 @@ If your system is not registered, use the following command:
 # subscription-manager register --username <username> --password <password> --auto-attach
 ```
 
-If it fails, follow [this guide](https://access.redhat.com/solutions/253273) to understand and troubleshoot registration process details.
+If it fails, follow [this guide](https://access.redhat.com/solutions/253273) to understand and troubleshoot registration process.

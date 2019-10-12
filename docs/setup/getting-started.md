@@ -21,6 +21,9 @@ Here's summary of available options:
 | Launching Cloud instance                           | `RHEL 8` <br/> `CentOS 8` | Public Clouds offer instance images with free credits to run them |
 | Anything else                                      | may vary                  | Bare metal, Private Cloud, Moon Lander |
 
+!!! warning "Limited Oracle(r) Linux Support"
+    Majority of the labs simply works. However, full Oracle(r) Linux support will be introduced later this year.
+
 <!---
 ## Special Lab Requirements
 
