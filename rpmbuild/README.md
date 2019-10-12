@@ -1,15 +1,16 @@
 # Content
 
-This folder contains LAB source code and build instructions.
+This folder contains Labs source code and build instructions.
 
 # Installation
 
 The good news is you don't have to (and shouldn't) build this RPM unless you want to contribute.
 
-In order to have LAB RPM installed, please follow [LABS](../LABS.md) instructions.
+Visit https://el8-lab.all-open.com for details.
 
-# Building LAB RPM
+# Building Lab RPM
 
-All the work is done by executing `./build.sh` script. It requires `docker`, builds a container, and builds the RPM inside.
+All the work is done by executing `./build.sh` script. It requires `docker`, builds a container, then builds the RPM inside.
 
-The script is a bit hacky, but it provides a super-simple way of building and RPM :)
+The script is a bit hacky, but that's compensated with RPM building simplicity :)
+
