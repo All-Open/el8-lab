@@ -1,7 +1,7 @@
 # System Registration
 
 !!! warning "RHEL only step!"
-    This step is only needed if you are using Red Hat (r) Enterprise Linux (r).
+    This step is only needed if you are using `Red Hat Enterprise Linux`.
     If not, proceed to the next step.
 
 !!! tip
@@ -12,7 +12,7 @@
 
 All Open Labs require `yum` software repositories content very often.
 
-Red Hat (r) Enterprise Linux (r) `yum` repositories are not publicly accessible. Therefore, you have to register to make then available.
+`Red Hat Enterprise Linux` `yum` repositories are not publicly accessible. Therefore, you have to register to make then available.
 
 ## Registration process
 

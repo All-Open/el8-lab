@@ -1,7 +1,7 @@
 # Welcome!
 Welcome to All Open Enterprise Linux 8 Labs!
 
-The purpose of this project is to develop your `Enterprise Linux 8` skills, whether you are using `CentOS 8`, Red Hat(r) Enterprise Linux(r) 8s, Oracle(r) Linux 8, or any other derivative.
+The purpose of this project is to develop your `Enterprise Linux 8` skills, whether you are using `CentOS 8`, `Red Hat Enterprise Linux 8`, `Oracle Linux 8`, or any other derivative.
 
 [Set up](/setup/getting-started) `Enterprise Linux 8` of you choice to grow your skills with challenging [`Labs`](labs/intro). All Open  RPM package will automatically check your results.
 
