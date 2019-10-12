@@ -21,7 +21,7 @@ grade () {
 
 disable_php_desc="php should not be listed by 'yum list'"
 disable_php () {
-    yum list php 2>&1 | grep -q "No matching Packages"
+    yum list php.x86_64 2>&1 | grep -q "No matching Packages"
 }
 
 reset_swig_desc="swig module should be neither enabled nor disabled"
