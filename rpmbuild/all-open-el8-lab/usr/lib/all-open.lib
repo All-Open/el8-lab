@@ -9,7 +9,7 @@ setup () {
     source "${lab_dir}/$1.lab"
     echo "Lab instructions at"
     echo ""
-    echo "https://github.com/All-Open/el8-lab/blob/master/LABS.md#$1"
+    echo "https://el8-lab.all-open.com/labs/$1"
     echo ""
     echo -n "Preparing lab: ${lab_desc}"
     setup && status_ok || status_fail && exit 1
