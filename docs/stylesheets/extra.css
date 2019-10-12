@@ -16,6 +16,12 @@
 .md-nav__link[data-md-state="blur"] {
   color: #14a76c;
 }
+.md-nav__title--site {
+  background-color: #272727 !important;
+}
+.md-nav__source {
+  background-color: #272727 !important;
+}
 .md-tabs__link {
   font-weight: bolder;
 }
@@ -28,4 +34,9 @@
 }
 .md-sidebar--secondary {
   margin-left: 65rem;
+}
+/* center */
+.md-footer-meta__inner {
+  margin: auto;
+  width: 35rem;
 }
