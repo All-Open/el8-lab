@@ -50,3 +50,4 @@ extra_css:
   - 'stylesheets/extra.css'
 extra_javascript:
   - 'javascripts/cookie.js'
+google_analytics: ['UA-149838316-1', 'el8-lab.all-open.com']
