@@ -21,6 +21,7 @@ nav:
       - DNF: 'labs/dnf.md'
       - Using Modules: 'labs/modules.md'
       - Switching Modules: 'labs/switching-modules.md'
+      - There is More: 'labs/outro.md'
 theme:
   name: 'material'
   palette:
