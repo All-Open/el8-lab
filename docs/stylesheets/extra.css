@@ -40,3 +40,28 @@
   margin: auto;
   width: 35rem;
 }
+/* cookie consent bar */
+.cookieConsent {
+    background-color: rgba(27,27,27,0.9);
+    color: #ccc;
+    line-height: 30px;
+    padding: 8px 0 8px 30px;
+    margin: auto;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: none;
+    z-index: 9999;
+    text-align: center;
+}
+.cookieConsent div {
+    display: none;
+}
+.cookieConsent a.cookieConsentOK {
+    background-color: #000000;
+    border-radius: 5px;
+    padding: 5px 25px;
+    cursor: pointer;
+}
+/* cookie consent bar ends */

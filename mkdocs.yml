@@ -38,3 +38,5 @@ markdown_extensions:
       permalink: true
 extra_css:
   - 'stylesheets/extra.css'
+extra_javascript:
+  - 'javascripts/cookie.js'
