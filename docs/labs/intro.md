@@ -8,9 +8,17 @@ If you have not already, read [the main page](/) first.
 
 RPM provides `all-open-lab` command capable of listing, preparing and grading labs.
 
+To get help use no params:
+```console
+Usage:
+/usr/bin/all-open-lab list              # list labs
+/usr/bin/all-open-lab setup <lab-name>  # prepare system for <lab-name> lab
+/usr/bin/all-open-lab grade <lab-name>  # grade <lab-name> lab
+```
+
 To list of available labs type:
 ```console
-# all-open-lab list labs
+# all-open-lab list
 (...)
 ```
 
