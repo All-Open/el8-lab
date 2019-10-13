@@ -40,6 +40,9 @@
   margin: auto;
   width: 35rem;
 }
+.md-footer-social {
+  padding: 0;
+}
 /* cookie consent bar */
 .cookieConsent {
     background-color: rgba(27,27,27,0.9);

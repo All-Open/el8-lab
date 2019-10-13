@@ -36,6 +36,16 @@ markdown_extensions:
   - pymdownx.smartsymbols
   - toc:
       permalink: true
+extra:
+  social:
+    - type: 'github'
+      link: 'https://github.com/All-Open'
+    - type: 'twitter'
+      link: 'https://twitter.com/BeAllOpen'
+    - type: 'linkedin'
+      link: 'https://www.linkedin.com/company/all-open'
+    - type: 'facebook'
+      link: 'https://www.facebook.com/AllOpenIT'
 extra_css:
   - 'stylesheets/extra.css'
 extra_javascript:
