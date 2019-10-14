@@ -38,7 +38,7 @@
 /* center */
 .md-footer-meta__inner {
   margin: auto;
-  width: 35rem;
+  text-align: center;
 }
 .md-footer-social {
   padding: 0;
@@ -48,7 +48,7 @@
     background-color: rgba(27,27,27,0.9);
     color: #ccc;
     line-height: 30px;
-    padding: 8px 0 8px 30px;
+    padding: 8px 30px 8px 30px;
     margin: auto;
     position: fixed;
     bottom: 0;
