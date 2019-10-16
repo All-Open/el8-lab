@@ -12,7 +12,7 @@ setup () {
     echo "https://el8-lab.all-open.com/labs/$1/"
     echo ""
     echo -n "Preparing lab: ${lab_desc}"
-    setup && status_ok || status_fail && exit 1
+    setup && status_ok || { status_fail && exit 1 ;}
 }
 
 grade () {
