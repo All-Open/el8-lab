@@ -36,7 +36,7 @@ grade () {
         [ ${status} -eq 0 ] && success="$((success+1))" && status_ok || status_fail
     done
     echo -n "Overall lab status: [${success}/${total}]"
-    [ "$success" -eq "$total" ] && status_ok || status_fail
+    [ "$success" -eq "$total" ] && status_ok || { status_fail && exit 1 ;}
 }
 
 ###############################################
