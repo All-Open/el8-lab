@@ -9,7 +9,7 @@ Task list:
 * Make sure that `swig` module is neither enabled nor disabled
 * Install `subversion` server
 * Make sure that `redis` package will be updated (once newer version is released) the next time `yum update` is executed
-* Completely remove `squid` module with all its packages
+* Completely remove `squid` module with all its packages (do not leave it enabled!)
 * Install `postgresql` 9.6 client package
 * Install `custodia` (idm secret provider) package
 

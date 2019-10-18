@@ -7,7 +7,7 @@ Task list:
 
 * Install `galera` profile in a clean way
   * You are allowed to remove software
-  * You should deliberately and not unused modules enabled
+  * Act deliberately and do not leave unused modules enabled
 * Update `perl` to version 5.26 with minimal profile installed
 
 ## Setup
