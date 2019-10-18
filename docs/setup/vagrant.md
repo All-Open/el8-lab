@@ -2,7 +2,7 @@
 
 ## Use `VirtualBox`!
 
-I failed to find working `Vagrant` images for any hypervisor expect `VirtualBox` so far.
+I failed to find working `Vagrant` images for any hypervisor expect for `VirtualBox` so far.
 
 Prerequisites:
 
