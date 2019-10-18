@@ -23,6 +23,10 @@ Use one of official images.
 | `RHEL 8`         | [GCP](https://cloud.google.com/compute/docs/images#unshielded-images) | Currently available without Shielded VM support <br /> `n1-standard-1` type is good enough |
 | `CentOS 8`       | [GCP](https://cloud.google.com/compute/docs/images#unshielded-images) | Currently available without Shielded VM support <br /> `n1-standard-1` type is good enough |
 
+
+!!! failure "Lack of `OL 8` images"
+    I failed to find any `OL 8` cloud images so far...
+
 ## Launch
 
 Start your `EL 8` instance and proceed to the next step.
