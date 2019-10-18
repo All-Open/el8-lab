@@ -11,7 +11,7 @@ Prerequisites:
 
 ## Quick setup scripts
 
-Become `root` (or any user) capable of spinning up Virtual Machines using `Vagrant` command.
+Become `root` (or any other) user capable of spinning up Virtual Machines using `Vagrant` command.
 
 ### RHEL 8
 
