@@ -8,8 +8,8 @@ Before you begin, keep in mind that there is a chance you don't need to perform 
 
 * Anaconda Installer does not introduce any significant changes so there is a little reason to learn it
 * Installation process is lenghty and boring
-* Cloud instances have `RHEL 8` and `CentOS 8` preinstalled
-* Vagrant Box have `CentOS 8` preinstalled
+* Clouds provide images with `RHEL 8` and `CentOS 8` preinstalled
+* Vagrant provides images (Boxes) with any `EL 8` preinstalled
 
 !!! tip
     If you decided to launch `EL8` from image, proceed to the next section now!
@@ -25,6 +25,9 @@ Grab ISO image. Choose one of the options:
 
 * `CentOS 8`
     * Just download [here](https://wiki.centos.org/Download)
+
+* `OL 8`
+    * Register and download [here](https://www.oracle.com/technetwork/server-storage/linux/downloads/index.html)
 
 # Hypervisor
 
