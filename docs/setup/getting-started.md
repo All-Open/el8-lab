@@ -4,7 +4,7 @@
 
 Welcome to All Open Enterprise Linux 8 Labs! If you have not already, read [langing page](/) first.
 
-All Open Labs are distributed as a single RPM package that works on any `Enterprise Linux 8`. The most popular choices are `Red Hat Enterprise Linux 8` and `CentOS 8` but everything should work on any derived distribution. To make it easier, I often call them `Enteprise Linux 8` or `EL 8` in short.
+All Open Labs are distributed as a single RPM package that works on any `Enterprise Linux 8`. The most popular choices are `Red Hat Enterprise Linux 8` (`RHEL 8`), `CentOS 8` and `Oracle Linux 8` (`OL 8`) but everything should work on any derived distribution. To make it easier, I often call them `Enteprise Linux 8` or `EL 8` in short.
 
 ## Understading Lab Ecosystem
 
@@ -14,15 +14,12 @@ You can choose one of two paths. Either launch a virtual machine to install `EL 
 
 Here's summary of available options:
 
-| Option                                             | Supported Systems         | Description                                    |
-|:--------------------------------------------------:|:-------------------------:|:----------------------------------------------:|
-| Installation in Virtual Machine                    | `RHEL 8` <br/> `CentOS 8` | Manually performed installation |
-| Spinning up Vagrant Box                            | `CentOS 8`                | Using `Vagrant` to create VM |
-| Launching Cloud instance                           | `RHEL 8` <br/> `CentOS 8` | Public Clouds offer instance images with free credits to run them |
-| Anything else                                      | may vary                  | Bare metal, Private Cloud, Moon Lander |
-
-!!! warning "Limited Oracle Linux Support"
-    Majority of the labs simply works. However, full Oracle Linux support will be introduced later this year.
+| Option                                             | Description                                    |
+|:--------------------------------------------------:|:----------------------------------------------:|
+| Installation in Virtual Machine                    | Manually performed installation |
+| Spinning up Vagrant Box                            | Using `Vagrant` to create VM |
+| Launching Cloud instance                           | Public Clouds offer instance images with free credits to run them |
+| Anything else                                      |  Bare metal, Private Cloud, Moon Lander |
 
 <!---
 ## Special Lab Requirements
