@@ -1,0 +1,37 @@
+lab_desc="Deploy and configure Cockpit"
+
+setup () {
+    :
+}
+
+grade () {
+    echo "check_installed check_installed_pcp check_installed_dashboard check_unit_enabled"
+}
+
+check_installed_desc="cockpit package should be installed"
+check_installed () {
+    is_package_installed cockpit && return 0
+
+    return 1
+}
+
+check_installed_pcp_desc="cockpit-pcp package should be installed"
+check_installed_pcp () {
+    is_package_installed cockpit-pcp && return 0
+
+    return 1
+}
+
+check_installed_dashboard_desc="cockpit-dashboard package should be installed"
+check_installed_dashboard () {
+    is_package_installed cockpit-dashboard && return 0
+
+    return 1
+}
+
+check_unit_enabled_desc="cockpit.socket should be enabled"
+check_unit_enabled () {
+    is_service_enabled cockpit.socket && return 0
+
+    return 1
+}
