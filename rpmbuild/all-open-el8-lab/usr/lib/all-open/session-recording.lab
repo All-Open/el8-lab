@@ -1,0 +1,76 @@
+lab_desc="Configure Session Recording"
+
+key_prv="/root/.ssh/id_rsa"
+key_pub="/root/.ssh/id_rsa.pub"
+test_user="all-open-test"
+test_user_uid="100777"
+magic="ALL OPEN"
+
+setup () {
+    yum install -y openssh openssh-clients >/dev/null 2>/dev/null
+    echo -n "."
+    if [ ! -e "${key_pub}" ]; then
+        ssh-keygen -N '' -f "${key_prv}" >/dev/null 2>/dev/null
+    fi
+    echo -n "."
+    id "${test_user}" >/dev/null 2>/dev/null || useradd "${test_user}" -m -u "${test_user_uid}"
+    echo -n "."
+    SSH_DIR="/home/${test_user}/.ssh"
+    if [ ! -e "${SSH_DIR}" ]; then
+        mkdir -m 0700 "${SSH_DIR}" 
+    fi
+    echo -n "."
+    AUTH_KEYS_FILE="${SSH_DIR}/authorized_keys"
+    cat "${key_pub}" > "${AUTH_KEYS_FILE}"
+    echo -n "."
+    chmod 0600 "${AUTH_KEYS_FILE}"
+    echo -n "."
+    chown -R "${test_user}:" "${SSH_DIR}"
+}
+
+grade () {
+    echo "check_installed_tlog check_installed_cockpit check_sssd_config check_banner check_journal"
+}
+
+check_installed_tlog_desc="tlog package should be installed"
+check_installed_tlog () {
+    is_package_installed tlog && return 0
+
+    return 1
+}
+
+check_installed_cockpit_desc="cockpit session recording package should be installed"
+check_installed_cockpit () {
+    is_package_installed cockpit-session-recording && return 0
+
+    return 1
+}
+
+check_sssd_config_desc="session recording is enabled in sssd configuration"
+check_sssd_config () {
+    grep -q scope=all /etc/sssd/conf.d/sssd-session-recording.conf 2>/dev/null && return 0
+
+    return 1
+}
+
+check_banner_desc="banner containing ${magic} is displayed on log on"
+check_banner () {
+    banner=$(ssh -i "${key_prv}" -o ConnectTimeout=20 -oStrictHostKeyChecking=no ${test_user}@localhost -t 'bash -c ls /' 2>&1)
+
+    echo "${banner}" | grep -q "${magic}" && return 0
+
+    return 1
+}
+
+check_journal_desc="recorded sessions are logged to journal"
+check_journal () {
+    # instead of failing immediately ensure to
+    # wait > Tlog latency (10s) for Tlog to dump session into journal 
+    for i in $(seq 15); do 
+        journalctl -o verbose 2>/dev/null | grep -q -i \"rec\" && return 0
+        sleep 1
+    done
+
+    return 1
+}
+
