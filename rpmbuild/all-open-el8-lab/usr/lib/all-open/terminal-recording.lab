@@ -17,7 +17,7 @@ setup () {
     echo -n "."
     SSH_DIR="/home/${test_user}/.ssh"
     if [ ! -e "${SSH_DIR}" ]; then
-        mkdir -m 0700 "${SSH_DIR}" 
+        mkdir -m 0700 "${SSH_DIR}"
     fi
     echo -n "."
     AUTH_KEYS_FILE="${SSH_DIR}/authorized_keys"
@@ -65,8 +65,8 @@ check_banner () {
 check_journal_desc="recorded sessions are logged to journal"
 check_journal () {
     # instead of failing immediately ensure to
-    # wait > Tlog latency (10s) for Tlog to dump session into journal 
-    for i in $(seq 15); do 
+    # wait > Tlog latency (10s) for Tlog to dump session into journal
+    for i in $(seq 15); do
         journalctl -o verbose 2>/dev/null | grep -q -i \"rec\" && return 0
         sleep 1
     done
