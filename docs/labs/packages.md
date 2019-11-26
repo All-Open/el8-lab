@@ -3,8 +3,7 @@
 ## Description
 The purpose of this lab is to explore new package management features.
 
-Task list:
-
+## Task list
 * Install `httpd` package without its weak dependencies
 
 ## Setup

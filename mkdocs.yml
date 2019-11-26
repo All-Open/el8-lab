@@ -22,6 +22,7 @@ nav:
       - Using Modules: 'labs/modules.md'
       - Switching Modules: 'labs/switching-modules.md'
       - Cockpit: 'labs/cockpit.md'
+      - Terminal Recording: 'labs/terminal-recording.md'
       - There is More: 'labs/outro.md'
 theme:
   name: 'material'

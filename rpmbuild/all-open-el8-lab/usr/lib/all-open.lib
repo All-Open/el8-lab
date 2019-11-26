@@ -63,10 +63,10 @@ status_fail () {
 }
 
 is_package_installed () {
-    rpm -q $1 >/dev/null
+    rpm -q --whatprovides $1 >/dev/null
 }
 
 is_service_enabled () {
-    systemctl is-enabled $1 2> /dev/null > /dev/null
+    systemctl is-enabled $1  >/dev/null 2>/dev/null
 }
 

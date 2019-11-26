@@ -3,8 +3,7 @@
 ## Description
 The purpose of this lab is to switch installed modules which may require a little bit of troubleshooting.
 
-Task list:
-
+## Task list
 * Install `galera` profile in a clean way
   * You are allowed to remove software
   * Act deliberately and do not leave unused modules enabled

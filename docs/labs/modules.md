@@ -3,8 +3,7 @@
 ## Description
 The purpose of this lab is to gain experience with basic concepts of modularity, like modules, streams and profiles.
 
-Task list:
-
+## Task list
 * Make sure that `php` package is not visible be `yum`
 * Make sure that `swig` module is neither enabled nor disabled
 * Install `subversion` server
