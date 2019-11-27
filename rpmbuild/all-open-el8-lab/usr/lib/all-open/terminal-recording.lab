@@ -55,7 +55,7 @@ check_sssd_config () {
 
 check_banner_desc="banner containing ${magic} is displayed on log on"
 check_banner () {
-    banner=$(ssh -i "${key_prv}" -o ConnectTimeout=20 -oStrictHostKeyChecking=no ${test_user}@localhost -t 'bash -c ls /' 2>&1)
+    banner=$(ssh -i "${key_prv}" -o ConnectTimeout=20 -o StrictHostKeyChecking=no ${test_user}@localhost -t 'bash -c ls /' 2>&1)
 
     echo "${banner}" | grep -q "${magic}" && return 0
 
