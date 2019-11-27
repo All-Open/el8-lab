@@ -6,7 +6,7 @@ The purpose of this lab is to ensure the operating system is compliant with the 
 ## Task list
 * Using System-wide crypto policies, set policy level that:
     * does not allow SHA-1 in signature algorithms
-    * enforces RH and RSA keys of at least 3072-bit key lenght
+    * enforces RH and RSA keys of at least 3072-bit key length
 * Due to compatibility restrictions, SSH daemon should be excluded from system-wide crypto policy settings
 * Configure Apache web server:
     * to serve any content at `https://localhost`
