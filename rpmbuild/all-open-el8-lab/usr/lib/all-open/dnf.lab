@@ -53,7 +53,7 @@ check_motd () {
 check_dnf_automatic_enabled_desc="dnf-automatic.timer should be enabled"
 check_dnf_automatic_enabled () {
     # in fact one of a few can be enabled so check all of them
-    is_service_enabled dnf-automatic.timer || is_service_enabled dnf-automatic-download.timer \
+    is_service_enabled dnf-automatic.timer || is_service_enabled dnf-automatic-download.timer || \
     is_service_enabled dnf-automatic-notifyonly.timer && return 0
 
     return 1
