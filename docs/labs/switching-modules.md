@@ -4,7 +4,7 @@
 The purpose of this lab is to switch installed modules which may require a little bit of troubleshooting.
 
 ## Task list
-* Install `galera` profile in a clean way
+* Install `galera` profile of `mariadb` in a clean way
     * You are allowed to remove software
     * Act deliberately and do not leave unused modules enabled
 * Update `perl` to version 5.26 with minimal profile installed
