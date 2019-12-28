@@ -26,7 +26,7 @@ check_sshd_opt_out () {
 
 check_httpd_key_length_desc="Certificate with 3072 key length was generated"
 check_httpd_key_length () {
-    openssl rsa -in /etc/pki/tls/private/localhost.key -noout -text | \
+    openssl rsa -in /etc/pki/tls/private/localhost.key -noout -text 2>/dev/null | \
         grep Private-Key | grep -q 3072 && return 0
 
     return 1
