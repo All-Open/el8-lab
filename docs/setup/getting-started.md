@@ -21,6 +21,15 @@ Here's summary of available options:
 | Launching Cloud instance                           | Public Clouds offer instance images with free credits to run them |
 | Anything else                                      |  Bare metal, Private Cloud, Moon Lander |
 
+## The Right Minor Version
+
+You might wonder what minor version of `EL 8` to choose - `8.0`, `8.1`, or a later one. The answer is always `choose the latest`!
+
+The entire content is universal - meaning that everything will work on any `EL 8` version.
+
+The course and the labs were initially developed on `8.0`, but a lot of new content was added later, using later minor versions. Regardless, I continuously test it on a later versions. That's an inspiring part of my `continuous everything` DevOps adventure! Speaking of which, this page follows `everything as code` principle, thus you definitely should [Star it o GitHub](https://github.com/All-Open/el8-lab/).
+
+
 <!---
 ## Special Lab Requirements
 
