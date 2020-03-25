@@ -50,7 +50,7 @@ sudo -i
 
 ## Your Millage May Vary
 
-Vagrant images (boxes) are updated to the latest minor version release of `EL 8`. Not only `RHEL 8`, `CentOS 8` and `OL 8` have independent release lifecycles, but also their Vagrant images lag from a few to weeks to a few months.
+Vagrant images (boxes) are not always updated to the latest minor version release of `EL 8`. Not only `RHEL 8`, `CentOS 8` and `OL 8` have independent release lifecycles, but also their Vagrant images lag from a few to weeks to a few months.
 
 Visit [the generic boxes page](https://app.vagrantup.com/generic) for the detailed version information. Don't worry, it's extremally likely that you've got the right image. If not, simply run `dnf update`.
 
