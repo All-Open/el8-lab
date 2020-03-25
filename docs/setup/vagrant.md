@@ -29,15 +29,13 @@ vagrant init generic/centos8
 vagrant up --provider=virtualbox
 ```
 
-### OL 8
+### Oracle Linux 8
 
 ```console
 mkdir all-open-lab && cd all-open-lab
-vagrant box add --name ol8 https://yum.oracle.com/boxes/oraclelinux/ol80/ol80.box --provider=virtualbox
-vagrant init ol8
+vagrant init generic/oracle8
 vagrant up --provider=virtualbox
 ```
-
 ## Accessing Virtual Machine
 
 ```console
@@ -49,3 +47,10 @@ vagrant ssh
 ```console
 sudo -i
 ```
+
+## Your Millage May Vary
+
+Vagrant images (boxes) are updated to the latest minor version release of `EL 8`. Not only `RHEL 8`, `CentOS 8` and `OL 8` have independent release lifecycles, but also their Vagrant images lag from a few to weeks to a few months.
+
+Visit [the generic boxes page](https://app.vagrantup.com/generic) for the detailed version information. Don't worry, it's extremally likely that you've got the right image. If not, simply run `dnf update`.
+

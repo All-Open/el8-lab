@@ -2,7 +2,7 @@
 
 ## To VM or not to VM?
 
-This guide helps in organizing yor own `Enterprise Linux 8` (or `EL8` in short) installation environment.
+This guide helps in organizing yor own `Enterprise Linux 8` (or `EL 8` in short) installation environment.
 
 Before you begin, keep in mind that there is a chance you don't need to perform full system installation. Possible reasons:
 
@@ -12,11 +12,11 @@ Before you begin, keep in mind that there is a chance you don't need to perform 
 * Vagrant provides images (Boxes) with any `EL 8` preinstalled
 
 !!! tip
-    If you decided to launch `EL8` from image, proceed to the next section now!
+    If you decided to launch `EL 8` from image, proceed to the next section now!
 
 ## Download ISO Image
 
-Grab ISO image. Choose one of the options:
+Grab the latest version of the ISO image. Choose one of the options:
 
 * `RHEL 8`
     * Download [here](https://developers.redhat.com/products/rhel/download/)
@@ -25,6 +25,7 @@ Grab ISO image. Choose one of the options:
 
 * `CentOS 8`
     * Just download [here](https://wiki.centos.org/Download)
+    * Choose version `8` instead of `8-Stream`
 
 * `OL 8`
     * Register and download [here](https://www.oracle.com/technetwork/server-storage/linux/downloads/index.html)
