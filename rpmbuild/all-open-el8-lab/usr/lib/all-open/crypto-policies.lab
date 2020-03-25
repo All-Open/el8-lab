@@ -34,7 +34,7 @@ check_httpd_key_length () {
 
 check_httpd_restarts_desc="Restart httpd to confirm it works"
 check_httpd_restarts () {
-    systemctl restart httpd && return 0
+    systemctl restart httpd 2>/dev/null && return 0
 
     return 1
 }

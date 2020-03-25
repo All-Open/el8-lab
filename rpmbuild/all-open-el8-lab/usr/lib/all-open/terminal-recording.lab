@@ -48,7 +48,7 @@ check_installed_cockpit () {
 
 check_sssd_config_desc="session recording is enabled in sssd configuration"
 check_sssd_config () {
-    grep -q scope=all /etc/sssd/conf.d/sssd-session-recording.conf 2>/dev/null && return 0
+    sed -e 's/[[:space:]]//g' /etc/sssd/conf.d/sssd-session-recording.conf 2>/dev/null | grep -q scope=all && return 0
 
     return 1
 }

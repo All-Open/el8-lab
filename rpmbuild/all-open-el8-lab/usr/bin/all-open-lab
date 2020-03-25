@@ -16,6 +16,9 @@ if [ "$#" -lt 1 ]; then
     exit 1
 fi
 
+# We often grep command output, so make sure it's consistent
+export LANG=C
+
 if [ "$1" == "list" ]; then
     source /usr/lib/all-open.lib
     $1
