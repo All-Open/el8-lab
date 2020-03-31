@@ -1,0 +1,30 @@
+lab_desc="Prepare warm environment for snakes to thrive"
+
+setup () {
+    :
+}
+
+grade () {
+    echo "check_python27 check_python36 check_python36_default"
+}
+
+check_python27_desc="python27 package should be installed"
+check_python27 () {
+    is_package_installed python27 && return 0
+
+    return 1
+}
+
+check_python36_desc="python36 package should be installed"
+check_python36 () {
+    is_package_installed python36 && return 0
+
+    return 1
+}
+
+check_python36_default_desc="python36 package should be installed"
+check_python36_default () {
+    python --version 2>/dev/null | grep '3.6' && return 0
+
+    return 1
+}
