@@ -21,6 +21,7 @@ nav:
       - DNF: 'labs/dnf.md'
       - Using Modules: 'labs/modules.md'
       - Switching Modules: 'labs/switching-modules.md'
+      - Python: 'labs/python.md'
       - Cockpit: 'labs/cockpit.md'
       - Terminal Recording: 'labs/terminal-recording.md'
       - Cryptographic Policies: 'labs/crypto-policies.md'

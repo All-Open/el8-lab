@@ -30,7 +30,7 @@ Grab the latest version of the ISO image. Choose one of the options:
 * `OL 8`
     * Register and download [here](https://www.oracle.com/technetwork/server-storage/linux/downloads/index.html)
 
-# Hypervisor
+## Hypervisor
 
 You need some Hypervisor to run a Virtual Machine.
 
@@ -40,11 +40,11 @@ VMware or oVirt installation are also feasible.
 
 The choice is yours!
 
-# Performing Installation
+## Performing Installation
 
 Create a new Virtual Machine, insert ISO image and complete the installation. All Open Labs don't require Graphical User Interface. For your convenience, you can install it anyway.
 
-# After Installation
+## After Installation
 
 1. Click through First Boot dialog.
 2. Ensure GUI and/or SSH access.
