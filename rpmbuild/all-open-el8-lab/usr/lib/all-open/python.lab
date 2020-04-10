@@ -1,0 +1,30 @@
+lab_desc="Prepare warm environment for snakes to thrive"
+
+setup () {
+    :
+}
+
+grade () {
+    echo "check_python2 check_python3 check_python36_default"
+}
+
+check_python2_desc="python2 package should be installed"
+check_python2 () {
+    is_package_installed python2 && return 0
+
+    return 1
+}
+
+check_python3_desc="python3 package should be installed"
+check_python3 () {
+    is_package_installed python3 && return 0
+
+    return 1
+}
+
+check_python36_default_desc="python 3.6 is the default one"
+check_python36_default () {
+    python --version 2>/dev/null | grep -q '3.6' && return 0
+
+    return 1
+}
