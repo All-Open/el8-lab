@@ -30,19 +30,9 @@
 }
 /* a bit wider to have support full console width */
 .md-grid {
-  max-width: 65rem;
+  max-width: calc(100% - 11.8rem * 2);
 }
-.md-sidebar--secondary {
-  margin-left: 65rem;
-}
-/* center */
-.md-footer-meta__inner {
-  margin: auto;
-  text-align: center;
-}
-.md-footer-social {
-  padding: 0;
-}
+*/
 /* cookie consent bar */
 .cookieConsent {
     background-color: rgba(27,27,27,0.9);

@@ -25,14 +25,17 @@ nav:
       - Cockpit: 'labs/cockpit.md'
       - Terminal Recording: 'labs/terminal-recording.md'
       - Cryptographic Policies: 'labs/crypto-policies.md'
+#      - Podman: 'labs/podman.md'
+#      - Buildah: 'labs/buildah.md'
+#      - Skopeo: 'labs/skopeo.md'
       - There is More: 'labs/outro.md'
 theme:
   name: 'material'
   palette:
     primary: 'green'
     accent: 'deep orange'
-  feature:
-    tabs: true
+  features:
+    - tabs
   custom_dir: 'custom_theme/'
   logo: 'img/all-open-logo.png'
 markdown_extensions:
@@ -45,12 +48,16 @@ extra:
   social:
     - type: 'github'
       link: 'https://github.com/All-Open'
+      icon: 'fontawesome/brands/github'
     - type: 'twitter'
       link: 'https://twitter.com/BeAllOpen'
+      icon: 'fontawesome/brands/twitter'
     - type: 'linkedin'
       link: 'https://www.linkedin.com/company/all-open'
+      icon: 'fontawesome/brands/linkedin-in'
     - type: 'facebook'
       link: 'https://www.facebook.com/AllOpenIT'
+      icon: 'fontawesome/brands/facebook'
 extra_css:
   - 'stylesheets/extra.css'
 extra_javascript:
