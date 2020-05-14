@@ -25,9 +25,9 @@ nav:
       - Cockpit: 'labs/cockpit.md'
       - Terminal Recording: 'labs/terminal-recording.md'
       - Cryptographic Policies: 'labs/crypto-policies.md'
-#      - Podman: 'labs/podman.md'
-#      - Buildah: 'labs/buildah.md'
-#      - Skopeo: 'labs/skopeo.md'
+      - Podman: 'labs/podman.md'
+      - Buildah: 'labs/buildah.md'
+      - Skopeo: 'labs/skopeo.md'
       - There is More: 'labs/outro.md'
 theme:
   name: 'material'

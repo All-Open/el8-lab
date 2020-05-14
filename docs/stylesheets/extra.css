@@ -32,7 +32,6 @@
 .md-grid {
   max-width: calc(100% - 11.8rem * 2);
 }
-*/
 /* cookie consent bar */
 .cookieConsent {
     background-color: rgba(27,27,27,0.9);
@@ -47,9 +46,6 @@
     display: none;
     z-index: 9999;
     text-align: center;
-}
-.cookieConsent div {
-    display: none;
 }
 .cookieConsent a.cookieConsentOK {
     background-color: #000000;
