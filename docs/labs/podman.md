@@ -23,7 +23,7 @@ The purpose of this lab is to forget about `docker` and shamelessly start using 
 
 !!! tip
     If don't like GUI tools feel free to complete Cockpit part of this lab using CLI. <br/>
-    Too score 100% you will need to install `podman` plugin for Cockpit though.
+    To score 100% you will need to install `podman` plugin for Cockpit though.
 
 ## Setup
 Execute
