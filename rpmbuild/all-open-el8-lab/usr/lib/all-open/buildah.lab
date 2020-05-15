@@ -1,0 +1,59 @@
+lab_desc="Build container images with buildah"
+
+setup () {
+    :
+}
+
+grade () {
+    echo "check_installed check_exists check_no_containerfile check_has_file"
+}
+
+check_installed_desc="buildah package should be installed"
+check_installed () {
+    is_package_installed buildah && return 0
+
+    return 1
+}
+
+check_exists_desc="centos:buildah image exists"
+check_exists () {
+    podman images --format "table {{.Repository}}:{{.Tag}}" 2>/dev/null \
+    | grep -q 'centos:buildah' && return 0
+
+    return 1
+}
+
+check_no_containerfile_desc="image was built without {Container,Docker}file"
+check_no_containerfile () {
+    # Fail if image does not exist
+    podman history --format="{{.CreatedBy}}" centos:buildah >/dev/null 2>/dev/null || return 1
+    # Everything build using *file has '/bin/sh -c' entires in each layer
+    # Top layer should not have it
+    podman history --format="{{.CreatedBy}}" centos:buildah 2>/dev/null \
+    | grep -qv 'sh -c' && return 0
+
+    return 1
+}
+
+check_has_file_desc="/root/all-open file exist in an image"
+check_has_file () {
+    # Fail if image does not exist
+    podman history --format="{{.CreatedBy}}" centos:buildah >/dev/null 2>/dev/null || return 1
+    # Create a container
+    container=$(buildah from centos:buildah)
+    # Mount the container filesystem
+    mountpoint=$(buildah mount $container)
+    # Finally, check if the file exists
+    found="no"
+    if stat ${mountpoint}/root/all-open >/dev/null 2>/dev/null; then
+        found="yes"
+    fi
+
+    buildah unmount $container || /bin/true
+
+    if [ $found == "yes" ]; then
+        return 0
+    fi
+
+    return 1
+}
