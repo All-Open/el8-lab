@@ -1,0 +1,102 @@
+lab_desc="Manage containers with podman"
+
+setup () {
+    :
+}
+
+grade () {
+    echo "check_installed check_installed_docker check_centos_pulled check_centos_tagged check_all_open_oci_exists check_all_open_oci_format check_all_open_docker_exists check_all_open_docker_format check_installed_cockpit check_container_runs check_container_command check_container_env"
+}
+
+check_installed_desc="podman package should be installed"
+check_installed () {
+    is_package_installed podman && return 0
+
+    return 1
+}
+
+check_installed_docker_desc="podman-docker package should be installed"
+check_installed_docker () {
+    is_package_installed podman-docker && return 0
+
+    return 1
+}
+
+check_centos_pulled_desc="docker.io/library/centos:8 is pulled"
+check_centos_pulled () {
+    podman images --format "table {{.Repository}}:{{.Tag}}" 2>/dev/null \
+    | grep -q 'docker.io/library/centos:8' && return 0
+
+    return 1
+}
+
+check_centos_tagged_desc="centos:8 is tagged as all-open:8"
+check_centos_tagged () {
+    podman images --format "table {{.Repository}}:{{.Tag}}" 2>/dev/null \
+    | grep -q 'all-open:8' && return 0
+
+    return 1
+}
+
+check_all_open_oci_exists_desc="all-open:oci image exists"
+check_all_open_oci_exists () {
+    podman images --format "table {{.Repository}}:{{.Tag}}" 2>/dev/null \
+    | grep -q 'all-open:oci' && return 0
+
+    return 1
+}
+
+check_all_open_oci_format_desc="all-open:oci is using OCI image format"
+check_all_open_oci_format () {
+    podman inspect all-open:oci --format='{{.ManifestType}}' 2>/dev/null \
+    | grep -q 'oci.image' && return 0
+
+    return 1
+}
+
+check_all_open_docker_exists_desc="all-open:docker image exists"
+check_all_open_docker_exists () {
+    podman images --format "table {{.Repository}}:{{.Tag}}" 2>/dev/null \
+    | grep -q 'all-open:docker' && return 0
+
+    return 1
+}
+
+check_all_open_docker_format_desc="all-open:docker is using Docker image format"
+check_all_open_docker_format () {
+    podman inspect all-open:docker --format='{{.ManifestType}}' 2>/dev/null \
+    | grep -q 'docker' && return 0
+
+    return 1
+}
+
+check_installed_cockpit_desc="cockpit-podman package should be installed"
+check_installed_cockpit () {
+    is_package_installed cockpit-podman && return 0
+
+    return 1
+}
+
+check_container_runs_desc="a-weema-weh container is up and running"
+check_container_runs () {
+    podman ps --format="{{.Names}}" 2>/dev/null \
+    | grep -q "a-weema-weh" && return 0
+
+    return 1
+}
+
+check_container_command_desc="a-weema-weh sleeps for infinity"
+check_container_command () {
+    podman ps --format="{{.Names}} {{.Command}}" 2>/dev/null \
+    | grep -q "a-weema-weh sleep infinity" && return 0
+
+    return 1
+}
+
+check_container_env_desc="a-weema-weh has all=open env var is defined"
+check_container_env () {
+    podman inspect --format='{{.Config.Env}}' a-weema-weh 2>/dev/null \
+    | grep -q "all=open" && return 0
+
+    return 1
+}
