@@ -19,6 +19,11 @@ Execute
     * Make sure not to built  `Containerfile` or `Dockerfile` - `all-open-lab` checks that!
 
 ## Grading
+
+!!! warning "podman required!"
+    Grading script requires `podman`. <br/>
+    Make sure to install `podman` before grading.
+
 Execute
 ```console
 # all-open-lab grade buildah

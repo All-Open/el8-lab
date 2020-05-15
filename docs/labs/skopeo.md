@@ -15,6 +15,11 @@ Execute
 * Using `skopeo`, copy `ubuntu:latest` from Docker Hub to the local container storage using `ubuntu:oci` tag, but this time changing image format to OCI
 
 ## Grading
+
+!!! warning "podman required!"
+    Grading script requires `podman`. <br/>
+    Make sure to install `podman` before grading.
+
 Execute
 ```console
 # all-open-lab grade skopeo
