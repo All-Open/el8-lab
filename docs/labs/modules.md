@@ -3,6 +3,12 @@
 ## Description
 The purpose of this lab is to gain experience with basic concepts of modularity, like modules, streams and profiles.
 
+## Setup
+Execute
+```console
+# all-open-lab setup modules
+```
+
 ## Task list
 * Make sure that `php` package is not visible by `yum`
 * Make sure that `swig` module is neither enabled nor disabled
@@ -11,12 +17,6 @@ The purpose of this lab is to gain experience with basic concepts of modularity,
 * Completely remove `squid` module with all its packages (do not leave it enabled!)
 * Install `postgresql` 9.6 client package
 * Install `custodia` (idm secret provider) package
-
-## Setup
-Execute
-```console
-# all-open-lab setup modules
-```
 
 ## Grading
 Execute

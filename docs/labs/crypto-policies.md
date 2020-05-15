@@ -3,6 +3,12 @@
 ## Description
 The purpose of this lab is to ensure the operating system is compliant with the ever growing security requirements.
 
+## Setup
+Execute
+```console
+# all-open-lab setup crypto-policies
+```
+
 ## Task list
 * Using system-wide crypto policies, set policy level that:
     * does not allow SHA-1 in signature algorithms
@@ -12,11 +18,6 @@ The purpose of this lab is to ensure the operating system is compliant with the 
     * to serve any content at `https://localhost`
     * leave system-default `localhost.crt` and `localhost.key` location
 
-## Setup
-Execute
-```console
-# all-open-lab setup crypto-policies
-```
 
 ## Grading
 Execute

@@ -3,6 +3,12 @@
 ## Description
 The purpose of this lab is to forget about `docker` and shamelessly start using `podman`. Like if it was `docker`!
 
+## Setup
+Execute
+```console
+# all-open-lab setup podman
+```
+
 ## Task list
 * Installation
     * Install `podman`
@@ -24,12 +30,6 @@ The purpose of this lab is to forget about `docker` and shamelessly start using 
 !!! tip
     If don't like GUI tools feel free to complete Cockpit part of this lab using CLI. <br/>
     To score 100% you will need to install `podman` plugin for Cockpit though.
-
-## Setup
-Execute
-```console
-# all-open-lab setup podman
-```
 
 ## Grading
 Execute
